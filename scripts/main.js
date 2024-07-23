@@ -5,6 +5,11 @@
     window.webkitRequestAnimationFrame ||
     window.msRequestAnimationFrame;
 
+  // 监听页面加载完成事件
+  window.addEventListener("load", () => {
+    alert("点击天空可以生成烟花哦~");
+  });
+
   const FRAME_RATE = 60;
   const PARTICLE_NUM = 2000;
   const RADIUS = Math.PI * 2;
@@ -20,7 +25,7 @@
     quiver = true,
     text = texts[0],
     textIndex = 0,
-    textSize = 70;
+    textSize = 60;
 
   function draw() {
     ctx.clearRect(0, 0, CANVASWIDTH, CANVASHEIGHT);

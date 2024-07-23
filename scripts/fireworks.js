@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         0 <= ref ? j < ref : j > ref;
         i = 0 <= ref ? ++j : --j
       ) {
-        speed = Math.random() * 8 + 2;
+        speed = Math.random() * 5 + 2;
         circle = new createjs.Shape();
         circle.graphics
           .f(`hsla(${this.h}, ${this.s}%, ${this.l}%, 1)`)
