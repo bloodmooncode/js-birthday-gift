@@ -49,6 +49,7 @@ body {
   bottom: 0%;
   height: 300px;
   width: 100%;
+  z-index: 1;
 }
 
 #scene {
@@ -90,4 +91,18 @@ a:hover {
   user-select: none;
   position: absolute;
   z-index: 1;
+}
+
+#stars {
+  position: absolute;
+  z-index: 1;
+}
+
+.birth-card {
+  position: absolute;
+  background-color: #ffffff9a;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  padding: 10px 20px;
 }
