@@ -183,6 +183,9 @@
         createjs.Ticker.on("tick", repeat);
 
         stage.addEventListener("stagemousedown", function () {
+          var explosionSound = document.getElementById("explosionSound");
+          explosionSound.currentTime = 0; // 重置音频播放时间
+          explosionSound.play(); // 播放音效
           fireBoss.push(new Fireworks(stage.mouseX, stage.mouseY));
           return fireBoss.push(new Fireworks(stage.mouseX, stage.mouseY));
         });
