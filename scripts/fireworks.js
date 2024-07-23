@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // 重力
-  GRAVITY = 1;
+  GRAVITY = 0.5;
 
   // 抵抗
   K = 0.9;
@@ -63,13 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
         0 <= ref ? j < ref : j > ref;
         i = 0 <= ref ? ++j : --j
       ) {
-        speed = Math.random() * 12 + 2;
+        speed = Math.random() * 8 + 2;
         circle = new createjs.Shape();
         circle.graphics
           .f(`hsla(${this.h}, ${this.s}%, ${this.l}%, 1)`)
           .dc(0, 0, this.size);
         circle.snapToPixel = true;
-        circle.compositeOperation = "lighter";
+        circle.compositeOperation = "screen";
         rad = ToRadian((Math.random() * 360) | 0);
         circle.set({
           x: this.sx,
@@ -121,11 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   fireBoss = [];
-
-  // setInterval(function () {
-  //   ctx.fillStyle = "rgba( 0, 0, 0, 0)";
-  //   ctx.fillRect(0, 0, fireworks.width, fireworks.height);
-  // }, 40);
 
   repeat = function () {
     var fireworks, j, ref;
