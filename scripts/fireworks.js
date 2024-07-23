@@ -4,24 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
     K,
     SPEED,
     ToRadian,
-    canvas,
+    fireworks,
     context,
     ctx,
     fireBoss,
     repeat,
     stage;
-  canvas = document.getElementById("canvas");
-  context = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  stage = new createjs.Stage(canvas);
+  fireworks = document.getElementById("fireworks");
+  context = fireworks.getContext("2d");
+  fireworks.width = window.innerWidth;
+  fireworks.height = window.innerHeight;
+  stage = new createjs.Stage(fireworks);
   stage.autoClear = false;
-  ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgba( 12, 27, 46, 0)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx = fireworks.getContext("2d");
+  // ctx.fillStyle = "rgba( 0, 0, 0, 0)";
+  // ctx.fillRect(0, 0, fireworks.width, fireworks.height);
   createjs.Ticker.setFPS(50);
   createjs.Touch.enable(stage);
   stage.update();
+
+  // 背景图片加载
+  bgImage = new Image();
+  bgImage.src = "background.jpg"; // 替换为您的背景图片路径
+  bgLoaded = false;
+  bgImage.onload = function () {
+    bgLoaded = true;
+  };
 
   // 重力
   GRAVITY = 1;
@@ -114,10 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fireBoss = [];
 
-  setInterval(function () {
-    ctx.fillStyle = "rgba( 12, 27, 46, 0.1)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }, 40);
+  // setInterval(function () {
+  //   ctx.fillStyle = "rgba( 0, 0, 0, 0)";
+  //   ctx.fillRect(0, 0, fireworks.width, fireworks.height);
+  // }, 40);
 
   repeat = function () {
     var fireworks, j, ref;
