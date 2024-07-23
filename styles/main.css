@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(12, 27, 46);
+  margin: 0; /* 移除默认边距 */
+}
+.fireworks {
+  display: block;
+  margin: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+}
