@@ -238,10 +238,23 @@
                 </g>
               </g>
             </svg>
-            <div class="birth-card" onclick="">点击查看生日贺卡</div>
+            <div
+              class="birth-card"
+              onclick="redirectToCard()"
+              style="cursor: pointer"
+            >
+              点击查看生日贺卡
+            </div>
           </div>
         </div>
       </div>
+
+      <script>
+        function redirectToCard() {
+          window.location.href =
+            "https://bloodmooncode.github.io/js-birthday-gift-detail";
+        }
+      </script>
       <!-- build:js scripts/main.js -->
       <script src="scripts/universe.js"></script>
       <script src="scripts/main.js"></script>
